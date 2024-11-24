@@ -1,0 +1,19 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    ports:
+      - 5173:5173
+    volumes:
+      - "./frontend:/frontend"
+    tty: true
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+    ports:
+      - 3000:3000
+    volumes:
+      - "./backend:/backend"
+    tty: true
